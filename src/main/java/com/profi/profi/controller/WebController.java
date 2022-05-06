@@ -1,4 +1,4 @@
-package com.profi.profi;
+package com.profi.profi.controller;
 
 import com.profi.profi.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,46 +29,46 @@ public class WebController {
                                            name5,Model model)
     {
         List<User> users = repository.findAll();
-        if(!email.isEmpty())
-        {
-            users = repository.findByEmailEndsWith(email);
-        }
-        else if(!email2.isEmpty())
-        {
-            users = repository.findSomeEmail(email2);
-        }
-        else if(!email3.isEmpty())
-        {
-            users = repository.findByEmailNotContaining(email3);
-        }
-        else if(!name1.isEmpty())
-        {
-            users = repository.findTop2ByNameStartsWith(name1);
-        }
-        else if(!name2.isEmpty())
-        {
-            users = repository.findLastTwoRows(name2);
-        }
-        else if(!name3.isEmpty())
-        {
-            users = repository.SortByName(name3);
-        }
-        else if(!name4.isEmpty())
-        {
-            users = repository.EqualNameSurname(name4);
-        }
-        else if(!name5.isEmpty())
-        {
-            users = repository.findDistinctByName(name5);
-        }
-        else if(!surname.isEmpty())
-        {
-            users = repository.findBySurnameContaining(surname);
-        }
-        else if(id1!=null)
-        {
-            users = repository.SortUsersById();
-        }
+//        if(!email.isEmpty())
+//        {
+//            users = repository.findByEmailEndsWith(email);
+//        }
+////        else if(!email2.isEmpty())
+////        {
+////            users = repository.findSomeEmail(email2);
+////        }
+//        else if(!email3.isEmpty())
+//        {
+//            users = repository.findByEmailNotContaining(email3);
+//        }
+//        else if(!name1.isEmpty())
+//        {
+//            users = repository.findTop2ByNameStartsWith(name1);
+//        }
+//        else if(!name2.isEmpty())
+//        {
+//            users = repository.findLastTwoRows(name2);
+//        }
+//        else if(!name3.isEmpty())
+//        {
+//            users = repository.SortByName(name3);
+//        }
+//        else if(!name4.isEmpty())
+//        {
+//            users = repository.EqualNameSurname(name4);
+//        }
+//        else if(!name5.isEmpty())
+//        {
+//            users = repository.findDistinctByName(name5);
+//        }
+//        else if(!surname.isEmpty())
+//        {
+//            users = repository.findBySurnameContaining(surname);
+//        }
+//        else if(id1!=null)
+//        {
+//            users = repository.SortUsersById();
+//        }
         model.addAttribute("users", users);
         return "index";
     }
